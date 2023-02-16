@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<head>
+    <html lang="en">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet"> 
+    
+    <title>
+       Temperature Conversion Microservice
+    </title>
+    <form class="form-temp" action="/temperature" method="POST">
+        <label for="select_temp"></label>
+        <input type="number" id="select_temp" name="select_temp" placeholder="Enter Temperature" value="0"/>
+        <select id="input_unit" name="input_unit" placeholder="Choose Unit to Convert">
+            <option id="input_unit" value="f" selected>&deg;F</option>
+            <option id="input_unit" value="c">&deg;C</option>
+            <option id = "input_unit" value="k">&deg;K</option>
+        </select>
+        <select type="text" id="conversion" name="conversion" placeholder="Choose Unit Conversion Type">
+            <option id="conversion" value="f" selected>&deg;F</option>
+            <option id="conversion" value="c">&deg;C</option>
+            <option id="conversion" value="k">&deg;K</option>
+        </select>
+        <button type="submit" >Convert</button>
+    </form>
+</body>
+</html>
+
+    
