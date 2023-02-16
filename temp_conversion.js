@@ -6,7 +6,7 @@ const convert_input_degree=(input_unit, select_temp, conversion) => {
     var value = 0;
     if (input_unit == 'f') {
         if (conversion == 'c') {
-            resultValue = 5/9*select_temp - 32
+            resultValue = (5/9*select_temp) - 32
         }
         else if (input_unit == 'k'){
             resultValue = select_temp + 457.87
@@ -21,12 +21,11 @@ const convert_input_degree=(input_unit, select_temp, conversion) => {
     }}
     if (input_unit == 'c') {
         if (conversion == 'f') {
-            resultValue = 9/5*select_temp + 32
+            resultValue = (9/5*select_temp) + 32
         }
         else if (input_unit == 'k'){
             resultValue = select_temp + 237.15
     }};
-    console.log(resultValue)
     value = resultValue.toFixed(2);
     fs.writeFile('temperature.txt', value, err => {
     if (err) 
