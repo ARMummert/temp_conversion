@@ -27,12 +27,13 @@ const convert_input_degree=(input_unit, select_temp, conversion) => {
     if (input_unit == 'c') 
         if (conversion == 'k')
         resultValue = select_temp + 237.15
-        
+
     value = resultValue.toFixed(2);
-    fs.writeFile('temperature.txt', value, err => {
+    fs.appendFile('temperature.txt', value, err => {
     if (err) 
         {console.error(err)}
-        console.log(value)
+    
+    console.log(value)
 })};
 
 
@@ -44,3 +45,4 @@ fs.readFile('temperature.txt', 'utf-8', (err, data) => {
     conversion = obj.conversion
     value = convert_input_degree(input_unit, select_temp, conversion);
 });
+

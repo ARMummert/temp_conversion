@@ -7,25 +7,60 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet"> 
-    
+    <link href="/temp_conversion/public/styles/style.css"  rel="stylesheet">
     <title>
        Temperature Conversion Microservice
     </title>
+<style>
+    body {
+    margin: 0;
+    padding: 0;
+    background-color: lightsteelblue;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+  
+form {
+    width: 100%;
+    height: 100vh;
+    background-image: 
+      linear-gradient(rgb(140, 218, 219), rgb(20, 133, 141));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+}
+
+label {
+    margin: 10px;
+    padding: 5px;
+}
+
+button {
+    margin: 20px;
+    padding: 5px;
+    width: 100px;
+    justify-content: center;
+}
+</style>
+<body>
     <form class="form-temp" action="/temperature" method="POST">
-        <label for="select_temp"></label>
+        <label for="select_temp">Choose a Temperature</label>
         <input type="number" id="select_temp" name="select_temp" placeholder="Enter Temperature" value="0"/>
+        <label for="input_unit">Select Temperature Type</label>
         <select id="input_unit" name="input_unit" placeholder="Choose Unit to Convert">
             <option id="input_unit" value="f" selected>&deg;F</option>
             <option id="input_unit" value="c">&deg;C</option>
             <option id = "input_unit" value="k">&deg;K</option>
         </select>
+        <label for="conversion">Select the Temperature Type for Conversion</label>
         <select type="text" id="conversion" name="conversion" value="conversion" placeholder="Choose Unit Conversion Type">
             <option id="conversion" value="f" selected>&deg;F</option>
-            <option id="conversion" value="c">&deg;C</option>
-            <option id="conversion" value="k">&deg;K</option>
+            <option id="conversion" value="c" >&deg;C</option>
+            <option id="conversion" value="k" >&deg;K</option>
         </select>
         <button type="submit" >Convert</button>
     </form>
+   
 </body>
 </html>
 
