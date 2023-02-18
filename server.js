@@ -1,11 +1,12 @@
 'use strict'
-
+//Express
 const express = require('express')
 const app = express()
 //PORT
-const port = 3000
+const port = 8000
 
 const fs = require('fs') //For creating, reading, and updating files
+
 const { range } = require('express/lib/request');
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
@@ -16,7 +17,7 @@ app.use(express.urlencoded({
     extended: true
 }));
 
-// Content Security Policy
+// Content Security Policy - install - npm i helmet
 const helmet = require("helmet");
 
 app.use(
