@@ -27,7 +27,7 @@ Open the main folder in vscode (or similar) and open a terminal
 7. enter the required values
 8. click submit
 9. note that temperature.txt now has the submitted values inside the file
-10. open a new termainal window and run node temp_conversion.js
+10. open a new terminal window and run node temp_conversion.js
 11. the conversion result is now written in the temp.txt file
 
 
