@@ -1,48 +1,38 @@
-const fs = require('fs')
+const fs = require('fs');
 
-const convert_input_degree=(input_unit, select_temp, conversion) => {
-    
-    var resultValue = 0;
-    var value = 0;
-    if (input_unit == 'f') 
-        if (conversion == 'c') 
-        resultValue = (select_temp - 32) / 1.8
-        
-    if (input_unit == 'f') 
-        if (conversion == 'k') 
-        resultValue = ((select_temp - 32) / 1.8) + 273.15
-     
-    if (input_unit == 'k') 
-        if (conversion == 'c') 
-        resultValue = ((select_temp - 273.15)*1.8) + 32
-    
-    if (input_unit == 'k') 
-        if (conversion == 'f')
-        resultValue = select_temp - 273.15
-    
-    if (input_unit == 'c') 
-        if (conversion == 'f') 
-        resultValue = (1.8*select_temp) + 32
-        
-    if (input_unit == 'c') 
-        if (conversion == 'k')
-        resultValue = select_temp + 237.15
-
-    value = resultValue.toFixed(2);
-    fs.appendFile('temperature.txt', value, err => {
-    if (err) 
-        {console.error(err)}
-    
-    console.log(value)
-})};
-
+function convert_input_degree(input_unit, select_temp, conversion) {
+    let resultValue;
+    if (input_unit == 'c') {
+        if (conversion == 'f') {
+            resultValue = (1.8 * select_temp) + 32;
+        } else if (conversion == 'k') {
+            resultValue = select_temp + 273.15; 
+        }
+    }
+    return resultValue.toFixed(2);
+}
 
 fs.readFile('temperature.txt', 'utf-8', (err, data) => {
     if (err) throw err;
-    const obj = JSON.parse(data);
-    input_unit = obj.input_unit
-    select_temp = obj.select_temp
-    conversion = obj.conversion
-    value = convert_input_degree(input_unit, select_temp, conversion);
+
+    try {
+        const obj = JSON.parse(data);
+        const input_unit = obj.input_unit;
+        const select_temp = obj.select_temp;
+        const conversion = obj.conversion;
+        const value = convert_input_degree(input_unit, select_temp, conversion);
+
+        fs.writeFile('temperature.txt', value, err => {
+            if (err) {
+                console.error(err);
+            } else {
+                console.log(value);
+            }
+        });
+    } catch (err) {
+        console.error(err);
+    }
 });
+
+module.exports = convert_input_degree;
 

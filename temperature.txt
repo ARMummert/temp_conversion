@@ -1,1 +1,1 @@
--54.22
+{"input_unit":"f","select_temp":"50","conversion":"c"}10.00
