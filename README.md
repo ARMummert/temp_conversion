@@ -9,7 +9,7 @@ Server Runs On: localhost:3000
 UML Diagram:
 ![image](/public/diagram.jpeg)
 
-#Running the Program:
+## Running the Program:
 
 Download the zip file and extract all files
 
