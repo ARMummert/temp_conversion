@@ -18,7 +18,6 @@ Download the zip file and extract all files
 Open the main folder in vscode (or similar) and open a terminal
 
 ##Instructions: 
-`run npm i express helmet`
 `npm install`
 `run node server.js`
 
