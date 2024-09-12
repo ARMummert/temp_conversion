@@ -17,12 +17,15 @@ Download the zip file and extract all files
 
 Open the main folder in vscode (or similar) and open a terminal
 
-`npm i node (if needed)`
+##Instructions: 
 `run npm i express helmet`
 `npm install`
 `run node server.js`
+
 -the server is running on localhost:3000
+
 `open localhost:3000`
+
 - enter some values and click sumbit
 - note that temperature.txt now has the submitted values inside the file
 - open a new terminal window and run node temp_conversion.js
