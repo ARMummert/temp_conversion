@@ -15,7 +15,7 @@ Download the zip file and extract all files
 
 Open the main folder in vscode (or similar) and open a terminal
 
-Installation Instructions: 
+## Installation Instructions: 
 `npm install`
 `run node server.js`
 
